@@ -1,6 +1,6 @@
 odoo.define(
     "website_event_sale_check_order_before_payment.event_payment_form",
-    function(require) {
+    function (require) {
         "use strict";
 
         const paymentForm = require("payment.payment_form");
@@ -12,7 +12,7 @@ odoo.define(
                 "click #o_payment_form_check_order_and_pay": "checkOrderAndPayEvent",
             }),
 
-            checkOrderAndPayEvent: async function(ev) {
+            checkOrderAndPayEvent: async function (ev) {
                 ev.preventDefault();
                 const order_validity_data = await this._rpc({
                     route: "/shop/check_before_payment",
@@ -29,7 +29,7 @@ odoo.define(
             /**
              * @override
              */
-            onSubmit: async function(ev) {
+            onSubmit: async function (ev) {
                 const res = this._super.apply(this, arguments);
                 const button = $(ev.target).find('*[type="submit"]')[0];
                 if (button.id === "o_payment_form_check_order_and_pay") {
