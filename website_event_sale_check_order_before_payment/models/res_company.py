@@ -12,17 +12,3 @@ class Company(models.Model):
         "go back to our event page to register again.",
         translate=True,
     )
-    no_more_seats_on_event_message = fields.Char(
-        help="Message displayed, if the last seats of the event have been sold before "
-        "the current payment process. (Availability per event)",
-        default="The last available seats have just been sold. Please go back to our "
-        "event page to register to another event.",
-        translate=True,
-    )
-    no_more_ticket_message = fields.Char(
-        help="Message displayed, if the last tickets have been sold before the "
-        "current payment process. (Availability per ticket)",
-        default="The last available tickets have just been sold. Please go back to "
-        "our event page to register to another event.",
-        translate=True,
-    )
